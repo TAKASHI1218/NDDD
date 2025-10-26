@@ -38,11 +38,6 @@ namespace NDDD.WinForm.Views
            _viewModel,
             nameof(_viewModel.MeasureValueText)
            );
-
-
-
-
-
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
