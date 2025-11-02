@@ -16,8 +16,6 @@ namespace NDDD.Infrastructure.Fake
         {
             try
             {
-           
-
                 var lines = System.IO.File.ReadAllLines(Shared.FakePath + "MeasureFake.csv");
 
                 var value = lines[0].Split(',');
@@ -32,9 +30,34 @@ namespace NDDD.Infrastructure.Fake
                 throw new FakeException(
                     "MeasureFakeの取得に失敗",
                     ex);
-
-
             }
+        }
+
+        public IReadOnlyList<MeasureEntity> GetLatests()
+        {
+            var result = new List<MeasureEntity>();
+            result.Add(
+                new MeasureEntity(
+                    10,
+                    Convert.ToDateTime("2020/12/12 12:34:56"),
+                    123.345f));
+            result.Add(
+              new MeasureEntity(
+                  20,
+                  Convert.ToDateTime("2020/12/12 12:34:56"),
+                  123.345f));
+            result.Add(
+              new MeasureEntity(
+                  30,
+                  Convert.ToDateTime("2020/12/12 12:34:56"),
+                  123.345f));
+            result.Add(
+              new MeasureEntity(
+                  40,
+                  Convert.ToDateTime("2020/12/12 12:34:56"),
+                  123.345f));
+
+            return result;
         }
     }
 }
