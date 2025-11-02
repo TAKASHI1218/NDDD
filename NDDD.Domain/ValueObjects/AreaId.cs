@@ -15,7 +15,7 @@ namespace NDDD.Domain.ValueObjects
 
         public int Value { get; set; }
 
-        public string AreaDisplayValue => Value.ToString().PadLeft(4, '0');
+        public string DisplayValue => Value.ToString().PadLeft(4, '0');
 
         protected override bool EqualsCore(AreaId other)
         {

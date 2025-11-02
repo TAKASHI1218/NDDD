@@ -56,9 +56,9 @@ namespace NDDD.WinForm.ViewModels
         {
             var measure = _measureRepository.GetLatest();
 
-            AreaIdText = measure.AreaId.AreaDisplayValue;
-            MeasureDateText = measure?.MeasureDate.MeasureDateDisplayValue;
-            MeasureValueText =measure.MeasureValue.MeasureValueDisplayValue;
+            AreaIdText = measure.AreaId.DisplayValue;
+            MeasureDateText = measure?.MeasureDate.DisplayValue;
+            MeasureValueText =measure.MeasureValue.DisplayValue;
         }
     }
 }

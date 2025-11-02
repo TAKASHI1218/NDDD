@@ -14,7 +14,7 @@ namespace NDDD.Domain.ValueObjects
             Value = value;
         }
 
-        public string MeasureValueDisplayValue =>
+        public string DisplayValue =>
             Math.Round(Value, 2) + "℃";
 
 

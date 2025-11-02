@@ -13,7 +13,7 @@ namespace NDDD.Domain.ValueObjects
             Value = value;
         }
 
-        public string MeasureDateDisplayValue =>
+        public string DisplayValue =>
             Value.ToString("yyyy/MM/dd HH:mm:ss");
 
         public DateTime Value { get; }
