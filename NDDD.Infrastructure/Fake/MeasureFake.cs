@@ -29,10 +29,10 @@ namespace NDDD.Infrastructure.Fake
             }
             catch(Exception ex)
             {
-                //throw new FakeException(
-                //    "MeasureFakeの取得に失敗",
-                //    ex);
-                throw new Exception("MeasureFakeの取得に失敗xx", ex);
+                throw new FakeException(
+                    "MeasureFakeの取得に失敗",
+                    ex);
+
 
             }
         }

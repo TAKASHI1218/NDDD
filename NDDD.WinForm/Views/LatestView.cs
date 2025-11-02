@@ -1,16 +1,10 @@
-﻿using NDDD.Domain.Repositories;
+﻿using NDDD.Domain.Exceptions;
+using NDDD.Domain.Repositories;
 using NDDD.Infrastructure;
 using NDDD.Infrastructure.Fake;
 using NDDD.WinForm.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace NDDD.WinForm.Views
 {
@@ -49,7 +43,8 @@ namespace NDDD.WinForm.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                ExceptionProc(ex);
+
             }
         }
     }
