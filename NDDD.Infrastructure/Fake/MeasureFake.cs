@@ -1,5 +1,6 @@
 ﻿using NDDD.Domain;
 using NDDD.Domain.Entities;
+using NDDD.Domain.Exceptions;
 using NDDD.Domain.Repositories;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace NDDD.Infrastructure.Fake
         {
             try
             {
+           
+
                 var lines = System.IO.File.ReadAllLines(Shared.FakePath + "MeasureFake.csv");
 
                 var value = lines[0].Split(',');
@@ -24,11 +27,12 @@ namespace NDDD.Infrastructure.Fake
                     Convert.ToSingle(value[2])
                     );
             }
-            catch
+            catch(Exception ex)
             {
-                return new MeasureEntity(10,
-                                         Convert.ToDateTime("2020/12/12 12:34:56"),
-                                         12.341f);
+                //throw new FakeException(
+                //    "MeasureFakeの取得に失敗",
+                //    ex);
+                throw new Exception("MeasureFakeの取得に失敗xx", ex);
 
             }
         }
