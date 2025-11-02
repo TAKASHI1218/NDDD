@@ -13,25 +13,14 @@ namespace NDDD.Domain.Entities
         public MeasureEntity(int areaId, DateTime measureDate, float measureValue) 
         {
             AreaId = new AreaId(areaId);
-            MeasureDate = measureDate;
-            MeasureValue = measureValue;
+            MeasureDate = new MeasureDate(measureDate);
+            MeasureValue = new MeasureValue(measureValue);
         }
-
-
-        //public MeasureEntity GetLatest()
-        //{
-            
-        //}
-
 
         public AreaId AreaId { get; }
 
-        public DateTime MeasureDate { get; }
+        public MeasureDate MeasureDate { get; }
 
-        public float MeasureValue { get; }
-
-
-
-
+        public MeasureValue MeasureValue { get; }
     }
 }
