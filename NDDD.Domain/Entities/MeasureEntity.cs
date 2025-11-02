@@ -1,4 +1,5 @@
 ﻿using NDDD.Domain.Repositories;
+using NDDD.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace NDDD.Domain.Entities
 {
-    public sealed class MeasureEntity : IMeasureRepository
+    public sealed class MeasureEntity
     {
         public MeasureEntity(int areaId, DateTime measureDate, float measureValue) 
         {
-            AreaId = areaId;
+            AreaId = new AreaId(areaId);
             MeasureDate = measureDate;
             MeasureValue = measureValue;
         }
 
 
-        public MeasureEntity GetLatest()
-        {
-            return new MeasureEntity(AreaId, MeasureDate, MeasureValue);
-        }
+        //public MeasureEntity GetLatest()
+        //{
+            
+        //}
 
 
-        public int AreaId { get; }
+        public AreaId AreaId { get; }
 
         public DateTime MeasureDate { get; }
 
