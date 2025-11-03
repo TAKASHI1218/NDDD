@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NDDD.Domain.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace NDDD.Domain.ValueObjects
         }
 
         public string DisplayValue =>
-            Math.Round(Value, 2) + "℃";
+            Value.RoundString(2) + "℃";
 
 
         public float Value { get; }
